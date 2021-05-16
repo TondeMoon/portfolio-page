@@ -1,7 +1,9 @@
 /* some part of code belongs to Copyright (c) 2021 by David Jones (https://codepen.io/VictoryDesign/pen/PqQevB) and is used */
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 
 html {
   height: 100%;
+  font-family: 'Roboto', 'sans-serif';
 }
 
 body {
@@ -67,10 +69,12 @@ body {
 
 .description-text li {
   font-family: 'Roboto', sans-serif;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .description-text h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 3rem;
   margin-top: 0;
 }
 
@@ -82,14 +86,21 @@ body {
 
 .projects-header {
   margin: 0 auto;
+  font-family: 'Caveat', cursive;
+  font-size: 4rem;
   padding-top: 10px;
   text-align: center;
-  font: normal 20px/1.618em 'Roboto', sans-serif;
   margin-bottom: 30px;
 }
 
 .projects-image {
   width: 300px;
+}
+
+.projects-name-description-all {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(28, 26, 29, 0.15);
 }
 
 .projects-name-description {
@@ -112,7 +123,6 @@ body {
   position: relative;
   color: white;
   font-size: 1.5rem;
-  margin-bottom: 10%;
 }
 
 .link-text {
@@ -121,6 +131,7 @@ body {
   color: white;
   font-family: 'Roboto', sans-serif;
   justify-content: center;
+  padding-bottom: 50px;
 }
 
 h1,
@@ -377,8 +388,61 @@ p {
   -ms-transform: translateX(92%) skewY(-25deg);
   transform: translateX(92%) skewY(-25deg);
 }
+@media screen and (max-width: 650px) {
+  body {
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+  }
 
-@media screen and (min-width: 490px) {
+  .profile-card {
+    width: 100%;
+    top: 0;
+  }
+
+  #front-page:before {
+    width: 0px;
+    -webkit-animation: puff_landscape 0.5s 1.8s
+        cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
+      borderRadius 0.2s 2.3s linear forwards;
+    animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19)
+        forwards,
+      borderRadius 0.2s 2.3s linear forwards;
+  }
+
+  .projects-name-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8%;
+  }
+  .projects-name-description-all {
+    margin: 0;
+  }
+
+  .projects-description {
+    margin: 5% 0 10% 0;
+    font-size: 16px;
+  }
+
+  .description-photo {
+    margin-top: 5%;
+  }
+
+  .description-text {
+    margin-right: 0;
+  }
+
+  #description-container {
+    width: 90%;
+  }
+
+  .projects-image {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 651px) {
   .profile-card {
     content: '';
     -webkit-animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19)
@@ -411,36 +475,41 @@ p {
     display: block;
     float: none;
   }
-}
-@media screen and (max-width: 480px) {
-  body {
-    background-size: 100%;
-    width: 100%;
-    height: 100%;
+
+  .description-photo {
+    margin-top: 8%;
+    width: 15%;
+    right: 20%;
   }
 
-  .profile-card {
-    width: 100%;
-    top: 0;
+  .description-text {
+    margin-right: 15%;
+    width: 70%;
   }
 
-  #front-page:before {
-    width: 0px;
-    -webkit-animation: puff_landscape 0.5s 1.8s
-        cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards,
-      borderRadius 0.2s 2.3s linear forwards;
-    animation: puff_landscape 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19)
-        forwards,
-      borderRadius 0.2s 2.3s linear forwards;
+  .description-text li {
+    font-size: 18px;
+  }
+
+  #description-container {
+    width: 90%;
+  }
+
+  .projects-name-description-all {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
   }
 
   .projects-name-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 10%;
+  }
+
+  .projects-image {
+    width: 400px;
   }
 }
+
 @-webkit-keyframes init {
   0% {
     width: 0px;
